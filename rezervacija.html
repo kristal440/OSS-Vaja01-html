@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="sl">
 <head>
-    <meta lang="sl">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rezervacija | Ime restavracije</title> <!-- TODO: zamenjaj ime restavracije -->
 </head>
+<body>
 <header>
     <a href="index.html">
         <img src="slike/logo50.jpeg" alt="Logotip restavracije">
@@ -38,23 +38,23 @@
 <form action="rezervacija.html" method="get">
     <fieldset>
         <legend>Kontaktni podatki</legend>
-        <label>Ime in priimek </label>
-        <input type="text" name="name" placeholder="Janez Novak" required> <br>
-        <label>Elektronska pošta </label>
-        <input type="email" name="email" placeholder="janez.novak@primer.si" required> <br>
-        <label>Telefon </label>
-        <input type="tel" name="telNumber" placeholder="040 123 456" required>
+        <label for="name" >Ime in priimek </label>
+        <input type="text" id="name" name="name" placeholder="Janez Novak" required> <br>
+        <label for="email">Elektronska pošta </label>
+        <input type="email" id="email" name="email" placeholder="janez.novak@primer.si" required> <br>
+        <label for="telNumber">Telefon </label>
+        <input type="tel" id="telNumber" name="telNumber" placeholder="040 123 456" required>
     </fieldset>
 
     <fieldset>
         <legend>Podrobnosti rezervacije</legend>
-        <label>Datum </label>
-        <input type="date" name="date" required> <br>
-        <labe>Ura </labe>
-        <input type="time" name="time" min="11:00" max="21:00" required> <br>
-        <label>Število oseb</label>
-        <input type="number" min="1" max="12" name="numOfPeople" required> <br>
-        <label>Prostor</label>
+        <label for="date">Datum </label>
+        <input type="date" id="date" name="date" required> <br>
+        <label for="time">Ura </label>
+        <input type="time" id="time" name="time" min="11:00" max="21:00" required> <br>
+        <label for="numOfPeople">Število oseb</label>
+        <input type="number" min="1" max="12" id="numOfPeople" name="numOfPeople" required> <br>
+        <label for="prostor">Prostor</label>
         <select name="prostor" id="prostor" required>
             <option value="notranjost">Notranjost</option>
             <option value="terasa">Terasa</option>
