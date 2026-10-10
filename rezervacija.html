@@ -32,8 +32,65 @@
     </ul>
 </nav>
 
+<h1>Rezervacija mize</h1>
+<p>Mizo lahko rezervirate od torka do nedelje med 11.00 in 21.00. Ob ponedeljkih je gostilna zaprta. Za skupine, večje od 12 oseb, nas prosim pokličite</p>
 
+<form action="rezervacija.html" method="get">
+    <fieldset>
+        <legend>Kontaktni podatki</legend>
+        <label>Ime in priimek </label>
+        <input type="text" name="name" placeholder="Janez Novak" required> <br>
+        <label>Elektronska pošta </label>
+        <input type="email" name="email" placeholder="janez.novak@primer.si" required> <br>
+        <label>Telefon </label>
+        <input type="tel" name="telNumber" placeholder="040 123 456" required>
+    </fieldset>
 
+    <fieldset>
+        <legend>Podrobnosti rezervacije</legend>
+        <label>Datum </label>
+        <input type="date" name="date" required> <br>
+        <labe>Ura </labe>
+        <input type="time" name="time" min="11:00" max="21:00" required> <br>
+        <label>Število oseb</label>
+        <input type="number" min="1" max="12" name="numOfPeople" required> <br>
+        <label>Prostor</label>
+        <select name="prostor" id="prostor" required>
+            <option value="notranjost">Notranjost</option>
+            <option value="terasa">Terasa</option>
+            <option value="zasebnaSoba">Zasebna soba</option>
+        </select> <br>
+        <label>Priložnost</label> <br>
+        <input type="radio" id="brez" name="priloznost" value="brez" checked required>
+        <label for="brez">Brez</label>
+        <input type="radio" id="rojstniDan" name="priloznost" value="rojstniDan">
+        <label for="rojstniDan">Rojstni dan</label>
+        <input type="radio" id="obletnica" name="priloznost" value="obletnica">
+        <label for="obletnica">Obletnica</label>
+        <input type="radio" id="poslovnoSrecanje" name="priloznost" value="poslovnoSrecanje">
+        <label for="poslovnoSrecanje">Poslovno srečanje</label>
+    </fieldset>
+
+    <fieldset>
+        <legend>Dodatne želje</legend>
+        <label>Prehranske omejitve</label> <br>
+        <input type="checkbox" id="vegetarijansko" name="prehranskeOmejitve" value="Vegetarijansko">
+        <label for="vegetarijansko">Vegetarijansko</label>
+        <input type="checkbox" id="vegansko" name="prehranskeOmejitve" value="Vegansko">
+        <label for="vegansko">Vegansko</label>
+        <input type="checkbox" id="brezGlutena" name="prehranskeOmejitve" value="Brez glutena">
+        <label for="brezGlutena">Brez glutena</label>
+        <input type="checkbox" id="brezLaktoze" name="prehranskeOmejitve" value="Brez laktoze">
+        <label for="brezLaktoze">Brez laktoze</label> <br>
+        <label for="opombe">Opombe</label>
+        <textarea name="opombe" id="opombe" cols="50" rows="5" placeholder="Npr. potrebujemo otroški stolček."></textarea>
+        <br>
+        <input type="checkbox" id="strinjanje" value="true" required>
+        <label for="strinjanje">Strinjam se z obdelavo osebnih podatkov</label>
+    </fieldset>
+    <input type="submit" value="Pošlji rezervacijo">
+    <input type="reset" value="Ponastavi">
+</form>
 <footer>
     <address> <!-- TODO: spremeni informacije -->
         Ime restavracije <br>
