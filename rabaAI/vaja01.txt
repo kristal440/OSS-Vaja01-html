@@ -1,0 +1,30 @@
+1. prompt: create an imagenary restaurant  and fill in the details in the html files (the details that are placeholders), don't change any html code (like adding new html elements) unless you are instructed to in a comment <!-- AI:....-->
+   #make the theme of the restaurant aisan
+1. odgovor: I filled in all five files and left the HTML structure alone. The only new elements are the extra <p>, <li> and <ol> items your AI: comments asked for. I removed the TODO and AI: comments once they were done, and the site text is in Slovene.
+
+            The restaurant: Gostilna Zeleni Bambus, an Asian-fusion inn (Japanese, Vietnamese, Thai) at Žibernik 19, 3250 Rogaška Slatina, which was already in o-nas.html.
+
+            The slogan is “Okusi Azije v srcu Štajerske.”
+            The phone is +386 3 123 45 67 and the e-mail is info@zelenibambus.si.
+            The name, address, phone and e-mail are changed in every header, title and footer.
+
+            What’s in each file:
+
+            index.html: Two “O restavraciji” paragraphs, one with <b> and one with <i>. The three featured dishes are Chicken teriyaki, Pho bo and Jagodni tiramisu.
+            jedilnik.html: An intro text and 12 dishes with descriptions, allergens and prices. The three recipe dishes (teriyaki, tiramisu, banana bread) are on the menu too, since the recipes page says they come from it.
+            o-nas.html: Four story paragraphs and a caption for the photo.
+            recepti.html: Ingredients translated to Slovene, step-by-step instructions, prep times and portions for all three recipes, plus the missing teriyaki caption.
+
+            Please check:
+
+            Images: I filled the empty src="" attributes with paths that don’t exist yet. You need to add these files to slike/: chicken-teriyaki.jpg, pho-bo.jpg, jagodni-tiramisu.jpg, bananin-kruh.jpg and restavracija.jpg.
+            Recipe details I added: The banana bread lists food colouring as optional and has a step for the rainbow effect, since the original ingredients had none. For the tiramisu I made sense of your layering notes (sliced strawberries, cream, soaked biscuits, then puree, cream, biscuits).
+            Allergens: These are my guesses for an imaginary menu, not a verified list.
+
+            Things I noticed but didn’t change:
+
+            Opening hours: o-nas.html says Monday to Saturday 10:00–21:00 and closed Sunday. rezervacija.html says Tuesday to Sunday 11:00–21:00 and closed Monday.
+            Typos: The jedilnik.html title says “Jedlinik”, and rezervacija.html has “nas prosim pokličite” (it should be “prosimo”).
+            Invalid HTML in recepti.html: <header>, <nav> and <footer> sit outside <body>.
+
+            Tell me if you’d like any of these fixed.
