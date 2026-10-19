@@ -1,0 +1,94 @@
+:root {
+    --primary: #166117;
+    --secondary: #775e39;
+    --headerColor: #91ba92;
+    --bgColor: #d9edda;
+    --txtColor: #239908;
+    font-size: 20px;
+}
+
+
+.rem-rem {
+    font-family: "REM", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: var(--txtColor);
+}
+
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-family: REM, sans-serif;
+    background-color: var(--bgColor);
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+}
+#logo span {
+    padding-left: 15px;
+    font-size: 30px;
+    font-weight: bold;
+}
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    background-color: var(--headerColor);
+    position: fixed; /*header ostane zgori*/
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    border-bottom: 5px solid var(--secondary);
+}
+nav ul{
+    list-style-type: none;
+    margin: 0;
+    padding-right: 50px;
+}
+nav ul li {
+    display: inline-block;
+    padding: 10px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+nav ul li a:hover {
+    color: var(--headerColor);
+    background-color: var(--secondary);
+}
+
+nav ul li a:active {
+    background-color: var(--txtColor);
+}
+footer {
+    margin-top: 20px;
+    padding-bottom: 0;
+    display: flex;
+    background-color: var(--headerColor);
+    border-top: 5px solid var(--secondary);
+}
+
+/*index.html*/
+.uvod{
+    margin: 20px;
+    border-radius: 5px;
+    background-image: url("/slike/notranjostRestavracije1000.jpeg");
+}
