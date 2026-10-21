@@ -16,7 +16,7 @@
     <nav>
         <ul>
             <li>
-                <a href="index.html">Domov</a>
+                <a href="index.html" class="aktivno">Domov</a>
             </li>
             <li>
                 <a href="jedilnik.html">Jedilnik</a>
@@ -33,52 +33,64 @@
         </ul>
     </nav>
 </header>
+<main>
     <!-- Uvodna sekcija -->
-<div class="uvod">
-    <h1>Lorem ipsum</h1>
-    <p>
-        Okusi Azije v srcu Štajerske.
-    </p>
-    <a href="rezervacija.html">Rezervirajte mizo</a>
-</div>
+    <section class="uvod">
+        <div class="uvodTxt">
+            <h1>Lorem ipsum</h1>
+            <p>
+                Okusi Azije v srcu Štajerske.
+            </p>
+            <a href="rezervacija.html">Rezervirajte mizo</a>
+        </div>
+    </section>
 
     <!-- O restavraciji -->
-    <h2>O restavraciji</h2>
-    <p>
-        V <b>Gostilni Zeleni Bambus</b> združujemo tradicijo slovenske gostilne z okusi Japonske, Vietnama in Tajske. Naši kuharji vsak dan pripravljajo juhe, omake in testa iz sveže zelenjave, zelišč in sezonskih sestavin z lokalnih kmetij, vse pa začinijo z azijskimi začimbami, ki jih skrbno izbiramo.
-    </p>
-    <p>
-        Pri nas se ne mudi nikamor. Jedi se kuhajo <i>počasi in z ljubeznijo</i>, kot bi jih pripravljali doma, zato vas bo ob vsakem grižljaju spremljal občutek toplote, ki ga poznate iz babičine kuhinje, le da z drugega konca sveta. Pridite sami, z družino ali s prijatelji, za mizo vedno najdemo prostor.
-    </p>
+    <section class="oRestavraciji">
+        <h2>O restavraciji</h2>
+        <p>
+            V <b>Gostilni Zeleni Bambus</b> združujemo tradicijo slovenske gostilne z okusi Japonske, Vietnama in Tajske. Naši kuharji vsak dan pripravljajo juhe, omake in testa iz sveže zelenjave, zelišč in sezonskih sestavin z lokalnih kmetij, vse pa začinijo z azijskimi začimbami, ki jih skrbno izbiramo.
+        </p>
+        <p>
+            Pri nas se ne mudi nikamor. Jedi se kuhajo <i>počasi in z ljubeznijo</i>, kot bi jih pripravljali doma, zato vas bo ob vsakem grižljaju spremljal občutek toplote, ki ga poznate iz babičine kuhinje, le da z drugega konca sveta. Pridite sami, z družino ali s prijatelji, za mizo vedno najdemo prostor.
+        </p>
+    </section>
 
     <!-- Izpostavljene jedi -->
-    <h2>Izpostavljene jedi</h2>
-    <article>
-        <h3>Chicken teriyaki</h3>
-        <figure>
-            <img src="slike/chicken-teriyaki500.jpg" alt="Chicken teriyaki z rižem in zelenjavo">
-            <figcaption>Naša najbolj priljubljena jed.</figcaption>
-        </figure>
-        <p>Sočni piščanec v sladko-slani teriyaki glazuri, postrežen z dušeno zelenjavo in puhastim rižem.</p>
-    </article>
+    <section class="jedi">
+        <h2>Izpostavljene jedi</h2>
+        <div class="slike">
+            <article id="chicken">
+                <h3>Chicken teriyaki</h3>
+                <figure>
+                    <img src="slike/chicken-teriyaki500.jpg" alt="Chicken teriyaki z rižem in zelenjavo">
+                    <figcaption><i>Naša najbolj priljubljena jed.</i></figcaption>
+                </figure>
+                <p>Sočni piščanec v sladko-slani teriyaki glazuri, postrežen z dušeno zelenjavo in puhastim rižem.</p>
+            </article>
 
-    <article>
-        <h3>Pho bo</h3>
-        <figure>
-            <img src="slike/pho-bo.webp" alt="Skleda vietnamske juhe pho bo">
-            <figcaption>Vietnamska klasika, kuhana več ur.</figcaption>
-        </figure>
-        <p>Aromatična goveja juha z rižnimi rezanci, tankimi rezinami govedi, svežo baziliko, koriandrom in limeto.</p>
-    </article>
+            <article id="pho">
+                <h3>Pho bo</h3>
+                <figure>
+                    <img src="slike/pho-bo.webp" alt="Skleda vietnamske juhe pho bo">
+                    <figcaption><i>Vietnamska klasika, kuhana več ur.</i></figcaption>
+                </figure>
+                <p>Aromatična goveja juha z rižnimi rezanci, tankimi rezinami govedi, svežo baziliko, koriandrom in limeto.</p>
+            </article>
 
-    <article>
-        <h3>Jagodni tiramisu</h3>
-        <figure>
-            <img src="slike/jagodni-tiramisu700.jpg" alt="Jagodni tiramisu v kozarcu">
-            <figcaption>Tiramisu brez kave, z jagodami.</figcaption>
-        </figure>
-        <p>Lahka in kremasta sladica iz mascarponeja, piškotov in svežih jagod, ki se ji težko upre kdorkoli.</p>
-    </article>
+            <article id="jagoda">
+                <h3>Jagodni tiramisu</h3>
+                <figure>
+                    <img src="slike/jagodni-tiramisu700.jpg" alt="Jagodni tiramisu v kozarcu">
+                    <div class="topright">NOVO</div>
+                    <figcaption><i>Tiramisu brez kave, z jagodami.</i></figcaption>
+                </figure>
+                <p>Lahka in kremasta sladica iz mascarponeja, piškotov in svežih jagod, ki se ji težko upre kdorkoli.</p>
+            </article>
+        </div>
+    </section>
+</main>
+
 
 <footer>
     <address>

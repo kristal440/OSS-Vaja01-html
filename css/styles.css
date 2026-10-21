@@ -1,8 +1,11 @@
 :root {
     --primary: #166117;
     --secondary: #775e39;
-    --headerColor: #91ba92;
+    --tertiary: #9c8a71;
+    --headerColor: rgb(158 214 160);
+    --footerColor: #89af8b;
     --bgColor: #d9edda;
+    --bgSecondaryColor: #e7f6e8;
     --txtColor: #239908;
     font-size: 20px;
 }
@@ -22,6 +25,11 @@
 a {
     text-decoration: none;
     color: var(--txtColor);
+    transition: font-weight .25s, color .25s ease, background .25s;
+}
+a:hover {
+    color: var(--bgColor);
+    font-weight: bold;
 }
 
 body {
@@ -47,7 +55,8 @@ header {
     align-items: center;
     margin: 0;
     background-color: var(--headerColor);
-    position: fixed; /*header ostane zgori*/
+
+    position: sticky;
     width: 100%;
     top: 0;
     z-index: 100;
@@ -71,24 +80,171 @@ nav ul li a{
     font-size: 1rem;
 }
 nav ul li a:hover {
-    color: var(--headerColor);
+    color: var(--bgColor);
     background-color: var(--secondary);
 }
 
-nav ul li a:active {
-    background-color: var(--txtColor);
+nav ul li a.aktivno {
+    color: var(--bgColor);
+    background-color: var(--primary);
 }
-footer {
-    margin-top: 20px;
-    padding-bottom: 0;
+footer { <!-- TODO: zrihti da je spodi ceu cajt -->
+    padding: 1rem;
     display: flex;
-    background-color: var(--headerColor);
+    flex-direction: column;
+    background-color: var(--footerColor);
     border-top: 5px solid var(--secondary);
+    bottom: 0;
+    width: 100%;
 }
 
 /*index.html*/
+main{
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
 .uvod{
-    margin: 20px;
+    width: 100%;
+    min-height: 60%;
+    padding: 25px;
+    background-image: url("../slike/notranjostRestavracije1000.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: var(--headerColor);
+}
+.uvodTxt{
+    text-align: center;
+    text-shadow: 1px 1px 15px var(--bgColor);
+    color: var(--bgColor);
+}
+
+.jedi{
+    margin-bottom: 1rem;
+}
+.jedi .slike{
+    display: flex;
+    flex-direction: row;
+}
+.jedi article{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 3px solid var(--headerColor);
+    border-radius: 25px;
+    margin: 5px;
+    box-shadow: 5px 5px 15px var(--headerColor);
+}
+.jedi article figure{
+    position: relative;
+}
+.jedi article img{
+    border-radius: 5%;
+    height: 200px;
+}
+.topright{
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    background-color: var(--primary);
+    border: 5px solid var(--primary);
+    color: var(--bgColor);
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+/*jedilnik*/
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th{
+    background-color: var(--headerColor);
+    color: var(--primary);
+}
+tr{
+    transition: background-color .25s ease;
+}
+tbody tr:hover{
+    background-color: color-mix(var(--bgColor), var(--tertiary) 25%);
+}
+tbody tr:nth-child(even){
+    background-color: var(--tertiary);
+}
+tr:nth-child(even):hover{
+    background-color: color-mix(var(--tertiary), var(--bgColor) 25%);
+}
+td:last-child{
+    text-align: right;
+}
+/*rezervacija*/
+fieldset{
+    border: 5px dotted var(--secondary);
+    border-top: 7px solid var(--primary);
+    border-radius: 15px;
+    margin: 1rem;
+    background-color: var(--bgSecondaryColor);
+}
+.mreza{
+    margin-left: 1rem;
+    display: grid;
+    grid-template-columns: 20% 70%;
+}
+.label{
+    grid-column: 1;
+}
+.input{
+    grid-column: 2;
+}
+legend{
+    background-color: var(--primary);
+    border-radius: 25px;
+    padding: 7px;
+    color: var(--bgSecondaryColor);
+    font-weight: 600;
+}
+.uvod2{
+    margin: 1rem;
+}
+textarea, select, input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]){
+    outline: 1px solid var(--secondary);
+    border: 1px solid var(--secondary);
     border-radius: 5px;
-    background-image: url("/slike/notranjostRestavracije1000.jpeg");
+    transition: outline-width .25s ease, outline-color .25s ease;
+    margin: .2rem;
+    background-color: var(--bgColor);
+    width: 70%;
+}
+
+textarea:focus, input:focus:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]), select:focus {
+    outline: 4px solid var(--primary);
+}
+
+
+.buttons{
+    margin: 2rem;
+}
+input[type="submit"], input[type="reset"] {
+    border-radius: .85rem;
+    height: 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: .25rem .5rem;
+}
+input[type="submit"]{
+    background-color: var(--primary);
+    border: none;
+    color: var(--bgSecondaryColor);
+}
+input[type="submit"]:hover{
+    cursor: -webkit-grab; cursor: grab;
+    background-color: color-mix(var(--primary), var(--bgSecondaryColor) 10%);
+}
+input[type="reset"]{
+    background-color: var(--bgSecondaryColor);
+    border: 1px solid var(--secondary);
 }
