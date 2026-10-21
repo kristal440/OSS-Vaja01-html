@@ -1,0 +1,18 @@
+2026-10-21 | dce8005 | dokončana vaja 2, zj pa zares
+2026-10-21 | 8317f7b | dokončana vaja 2
+2026-10-21 | 8b3825e | recepti končano
+2026-10-21 | 965a323 | rezervacija končana in index pa jedilnik še neki css dodan
+2026-10-19 | eb985f6 | logo nov + mal css
+2026-10-12 | 47b3138 | logs
+2026-10-12 | 2406010 | rabaAI folder ustvarjen pa file za vajo 1 tudi
+2026-10-12 | 3e7b568 | odstranjen og logo
+2026-10-12 | 6bc644c | z AI ustvarjena restavracija + popravki z validatorjem
+2026-10-10 | 3377d24 | dodaja prazne rabaAI.txt datoteke
+2026-10-10 | 4af21c2 | o nas dokončano
+2026-10-10 | 1e4b39e | recepti končano, popravlanje to ko se je ide pritožvau, body na pravem placu pa lang=sl na pravem mestu
+2026-10-10 | 0d5aa95 | rezervacija končana
+2026-10-08 | c77a00a | jedilnik dokončan
+2026-10-08 | 43a29ca | v footer dodan ©
+2026-10-08 | 155f588 | index.html completed, other files header and footer set
+2026-10-08 | bffae97 | empty files added
+2026-10-07 | 617dbfb | test commit
