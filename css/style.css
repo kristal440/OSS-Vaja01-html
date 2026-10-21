@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=REM:wght@100..900&display=swap");
+
 :root {
     --primary: #166117;
     --secondary: #775e39;
@@ -7,6 +9,7 @@
     --bgColor: #d9edda;
     --bgSecondaryColor: #e7f6e8;
     --txtColor: #239908;
+    --warning: #ff0000;
     font-size: 20px;
 }
 
@@ -28,7 +31,7 @@ a{
     transition: font-weight .25s, color .25s ease, background .25s;
 }
 a:hover {
-    color: var(--bgColor);
+    color: var(--bgSecondaryColor);
     font-weight: bold;
 }
 
@@ -46,7 +49,7 @@ body {
 }
 #logo span {
     padding-left: 15px;
-    font-size: 30px;
+    font-size: 1.5rem;
     font-weight: bold;
 }
 header {
@@ -79,9 +82,11 @@ nav ul li a{
     border-radius: 5px;
     font-size: 1rem;
 }
-nav ul li a:hover {
-    color: var(--bgColor);
+
+nav ul li a:hover{
+    color: var(--bgSecondaryColor);
     background-color: var(--secondary);
+
 }
 
 nav ul li a.aktivno {
@@ -106,7 +111,7 @@ main{
 }
 .uvod{
     width: 100%;
-    min-height: 60%;
+    min-height: 60vh;
     padding: 25px;
     background-image: url("../slike/notranjostRestavracije1000.jpeg");
     background-size: cover;
@@ -117,7 +122,7 @@ main{
 .uvodTxt{
     text-align: center;
     text-shadow: 1px 1px 15px var(--bgColor);
-    color: var(--bgColor);
+    color: var(--bgSecondaryColor);
 }
 
 .jedi{
@@ -144,6 +149,9 @@ main{
 .jedi article img{
     border-radius: 5%;
     height: 200px;
+    width: 100%;
+    object-fit: cover; /*obrezovanje*/
+    box-shadow: 5px 5px 15px color-mix(var(--bgSecondaryColor), var(--secondary) 60%);
 }
 .topright{
     position: absolute;
@@ -158,27 +166,27 @@ main{
 
 /*jedilnik*/
 
-table{
+.jedilnik{
     width: 100%;
     border-collapse: collapse;
 }
-th{
+.jedilnik th{
     background-color: var(--headerColor);
     color: var(--primary);
 }
-tr{
+.jedilnik tr{
     transition: background-color .25s ease;
 }
-tbody tr:hover{
+.jedilnik tbody tr:hover{
     background-color: color-mix(var(--bgColor), var(--tertiary) 25%);
 }
-tbody tr:nth-child(even){
+.jedilnik tbody tr:nth-child(even){
     background-color: var(--tertiary);
 }
-tr:nth-child(even):hover{
+.jedilnik tr:nth-child(even):hover{
     background-color: color-mix(var(--tertiary), var(--bgColor) 25%);
 }
-td:last-child{
+.jedilnik td:last-child{
     text-align: right;
 }
 /*rezervacija*/
@@ -248,6 +256,11 @@ input[type="reset"]{
     background-color: var(--bgSecondaryColor);
     border: 1px solid var(--secondary);
 }
+input[type="reset"]:hover{
+    cursor: -webkit-grab; cursor: grab;
+    background-color: color-mix(var(--bgSecondaryColor), var(--secondary) 10%);
+
+}
 
 /*recepti*/
 
@@ -284,4 +297,45 @@ input[type="reset"]{
 .recepti h3, .recepti h2{
     border-bottom: 3px dotted color-mix(var(--primary), #000 20%);
     color: var(--primary);
+}
+#jagodniTiramisuSlika img{ /*TODO: spremen kulk vkla je slika namest tega*/
+    width: 500px;
+}
+
+/*o nas*/
+
+.oNasContainer{
+    display: flex;
+}
+.oNasTxt{
+    min-width: 500px;
+}
+.oNasContainer img { /*todo: spremen nared še drugo sliko ko je manjša*/
+    width: 500px;
+}
+
+.oNasTable{
+    background-color: var(--bgSecondaryColor);
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden; /* brez tega ne dela border-radius spodi, zgori pa dela?*/
+}
+.oNasTable td{
+    padding: 1rem;
+}
+.oNasTable thead th{
+    background-color: color-mix( var(--bgSecondaryColor), var(--primary) 40%);
+    border-bottom: 5px solid color-mix(var(--primary), var(--bgSecondaryColor) 20%);
+    font-size: 1.2rem;
+    padding: .5rem 1rem;
+}
+.oNasTable tbody tr:last-child{
+    border-top: 3px solid color-mix(var(--warning), var(--bgSecondaryColor) 40%);
+    background-color: color-mix(var(--bgSecondaryColor), var(--warning) 20%);
+}
+iframe{
+    margin-top: 1rem;
+    width: 100%;
+    height: 400px;
+    border: 2px solid var(--secondary);
 }
