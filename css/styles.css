@@ -22,7 +22,7 @@
     box-sizing: border-box;
 }
 
-a {
+a{
     text-decoration: none;
     color: var(--txtColor);
     transition: font-weight .25s, color .25s ease, background .25s;
@@ -88,7 +88,7 @@ nav ul li a.aktivno {
     color: var(--bgColor);
     background-color: var(--primary);
 }
-footer { <!-- TODO: zrihti da je spodi ceu cajt -->
+footer { /*TODO: zrihti da je spodi ceu cajt*/
     padding: 1rem;
     display: flex;
     flex-direction: column;
@@ -247,4 +247,41 @@ input[type="submit"]:hover{
 input[type="reset"]{
     background-color: var(--bgSecondaryColor);
     border: 1px solid var(--secondary);
+}
+
+/*recepti*/
+
+.gumbi{
+    list-style-type: none;
+}
+.gumbi li{
+    display: inline-block;
+    background-color: var(--bgSecondaryColor);
+    border: 1px solid var(--secondary);
+    border-radius: 25px;
+    padding: .5rem 1rem;
+}
+.gumbi a:hover{
+    color: var(--txtColor);
+}
+
+.recepti{
+    border-radius: 15px;
+    background-color: var(--bgSecondaryColor);
+    padding: .5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.receptiContainer{
+    display: flex;
+    flex-direction: row;
+}
+.sestavine{
+    border: 2px solid var(--secondary);
+    border-radius: 25px;
+    padding: 1rem;
+}
+.recepti h3, .recepti h2{
+    border-bottom: 3px dotted color-mix(var(--primary), #000 20%);
+    color: var(--primary);
 }
