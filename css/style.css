@@ -10,6 +10,7 @@
     --bgSecondaryColor: #e7f6e8;
     --txtColor: #239908;
     --warning: #ff0000;
+    --barvaGradient: rgb(0 0 0/.55);
     font-size: 20px;
 }
 
@@ -100,6 +101,7 @@ footer { /*TODO: zrihti da je spodi ceu cajt*/
     background-color: var(--footerColor);
     border-top: 5px solid var(--secondary);
     bottom: 0;
+    margin-top: 3rem;
     width: 100%;
 }
 
@@ -113,11 +115,14 @@ main{
     width: 100%;
     min-height: 60vh;
     padding: 25px;
-    background-image: url("../slike/notranjostRestavracije1000.jpeg");
+    background-image: linear-gradient(var(--barvaGradient), var(--barvaGradient)), url("../slike/notranjostRestavracije1000.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--headerColor);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .uvodTxt{
     text-align: center;
@@ -135,6 +140,7 @@ main{
 .jedi article{
     padding: 10px;
     display: flex;
+    flex: 1; /*enaka širina za vse slike*/
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -186,7 +192,7 @@ main{
 .jedilnik tr:nth-child(even):hover{
     background-color: color-mix(var(--tertiary), var(--bgColor) 25%);
 }
-.jedilnik td:last-child{
+.jedilnik td:last-child, .jedilnik th:last-child{
     text-align: right;
 }
 /*rezervacija*/

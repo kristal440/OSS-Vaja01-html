@@ -1,0 +1,232 @@
+DOKUMENTACIJA UPORABE UMETNE INTELIGENCE
+=========================================
+Projekt: ____________________
+Orodje: Claude (Anthropic), claude.ai
+Datoteka ustvarjena/posodobljena: 21. 10. 2026
+
+POJASNILA
+- Poizvedbe so prepisane dobesedno (jezik izvirnika).
+- Odgovori so zapisani kot povzetek (rešitev + ključna razlaga), ne dobesedno.
+  Če potrebujete dobesedne odgovore, jih prilepite v polje "ODGOVOR".
+- Model: iz prilepljenega besedila ni razvidno, kateri model je odgovarjal.
+  Vpišite ga ročno (izbirnik modelov v posameznem pogovoru). Pri vnosu 0 je
+  model znan (Claude Sonnet 5.5).
+- Datumi starejših pogovorov niso znani in jih je treba dopolniti.
+- Priložene datoteke (HTML/CSS) so bile navedene, njihova vsebina pa ni
+  del prilepljenega besedila.
+
+=========================================================
+VNOS 0 – Dokumentiranje uporabe AI
+=========================================================
+Datum: 21. 10. 2026
+Model: Claude Sonnet 5.5
+
+POIZVEDBA:
+ali lahko ustvariš dokumentacijo za vse pogovore v trenutnem projektu
+
+Uporabo umetne inteligence ustrezno dokumentirajte. V datoteki txt beležite
+poizvedbo, odgovor in uporabljen model.
+
+ODGOVOR (povzetek):
+Claude nima dostopa do drugih pogovorov v projektu, zato je ustvaril datoteko
+txt z vnosom za ta pogovor in predlogo za ročno dodajanje drugih.
+Uporaba odgovora: izdelava te datoteke.
+Preveril/a: ____________________
+
+=========================================================
+POGOVOR A – o-nas.html / recepti_1.html (tabela .oNasTable)
+Priložene datoteke: styles.css, recepti_1.html, o-nas.html, styles_eb2f45.css
+=========================================================
+
+VNOS A1
+Datum: ______  Model: ______ (ni razvidno)
+POIZVEDBA:
+kako lahko napišem not zato da ne bo delovalo na gumbih
+ODGOVOR: v prilepljenem besedilu ni naveden.
+
+VNOS A2
+Datum: ______  Model: ______ (ni razvidno)
+POIZVEDBA:
+i want the whole bottom row to be a red tint, but there is a gap between the
+td's and also on the outside to the border of the table
+ODGOVOR (povzetek):
+Vrzeli povzročata privzeta border-collapse: separate in border-spacing.
+Rešitev: border-collapse: collapse (ali border-spacing: 0) na .oNasTable.
+padding/margin na tr nimata učinka. color-mix() mora vsebovati barvni prostor
+(color-mix(in srgb, ...)), sicer brskalnik zavrže deklaracijo. Podan je
+očiščen blok CSS (.oNasTable, .oNasTable td, .oNasTable tbody tr:last-child).
+Prazno pravilo .onasTable td{} (majhna začetnica) ne ustreza ničemur.
+Uporaba odgovora: ____________________
+Preveril/a: ____________________
+
+VNOS A3
+Datum: ______  Model: ______ (ni razvidno)
+POIZVEDBA:
+why isnt there a border radius on the bottom?
+(+ priložena koda .oNasTable z border-radius: 10px in pravilom za
+tbody tr:last-child)
+ODGOVOR (povzetek):
+border-radius ne deluje na tabeli z border-collapse: collapse, na tr nima
+učinka, celice pa ohranijo kvadratna ozadja. Rešitev: border-collapse:
+separate + border-spacing: 0, obrobo premakniti s tr na td, zaobljenje dati
+kotnima celicama zadnje vrstice (td:first-child / td:last-child z
+border-bottom-left/right-radius), po potrebi ozadje nastaviti tudi na td.
+Za zgornje kote enako s thead th. Ponovno opozorilo na color-mix(in srgb).
+Uporaba odgovora: ____________________
+Preveril/a: ____________________
+
+=========================================================
+POGOVOR B – rezervacija.html (obrazec)
+Priložene datoteke: rezervacija.html, styles.css, styles_1.css,
+rezervacija_1.html
+=========================================================
+
+VNOS B1
+Datum: ______  Model: ______ (ni razvidno)
+POIZVEDBA:
+kako naj naredim da label class zavzame levih 30% fieldseta, input class pa
+drugih 70%?
+ODGOVOR (povzetek):
+fieldset ima grid-template-columns: 30% 70%, vendar fieldset v nekaterih
+brskalnikih ni zanesljiv grid container, legend pa zasede prvo celico.
+Predlagano: .label { grid-column: 1 } in .input { grid-column: 2 }. Robustnejša
+rešitev: vsebino fieldseta zaviti v div.mreza z display: grid in
+grid-template-columns: 30% 70%. Nasvet: odstraniti odvečne <br> in inputom
+dati width: 100% z max-width: 400px.
+Uporaba odgovora: ____________________
+Preveril/a: ____________________
+
+VNOS B2
+Datum: ______  Model: ______ (ni razvidno)
+POIZVEDBA:
+why doesn't the transition happen
+ODGOVOR (povzetek):
+Prehod ne deluje, ker se outline-style spremeni iz none v solid (diskretna
+sprememba, ki je ni mogoče animirati). Rešitev: v osnovnem stanju outline:
+0 solid var(--primary) z transition: outline-width .25s ease, ob :focus
+outline-width: 4px; ali konstantna širina in animacija outline-color iz
+transparent. Predlagano skrajšanje prehoda z 1s na .25s. Dodatno: HTML
+komentar <!-- --> v CSS je neveljaven (uporabiti /* */), za nogo na dnu strani
+body { min-height: 100vh; display: flex; flex-direction: column } in
+main { flex: 1 }.
+Uporaba odgovora: ____________________
+Preveril/a: ____________________
+
+VNOS B3
+Datum: ______  Model: ______ (ni razvidno)
+POIZVEDBA:
+how do i remove the border and outline for checkbox and radio buttons
+ODGOVOR (povzetek):
+Splošno pravilo za input zajame tudi checkbox/radio. Rešitev: izključiti ju z
+input:not([type="checkbox"]):not([type="radio"]) ali ju prepisati posebej.
+Opozorilo: odstranitev focus indikatorja škoduje uporabnikom tipkovnice;
+bolje :focus-visible z outline in outline-offset. Za videz kontrolnikov
+uporabiti accent-color.
+Uporaba odgovora: ____________________
+Preveril/a: ____________________
+
+=========================================================
+POGOVOR C – index.html (tabela, noga)
+Priložene datoteke: index.html, styles.css
+=========================================================
+
+VNOS C1
+Datum: ______  Model: ______ (ni razvidno)
+POIZVEDBA:
+why does the footer have  the address and p in the same line and not one
+bellow the other
+ODGOVOR: v prilepljenem besedilu ni naveden. Prikazani odgovor pod to
+poizvedbo se nanaša na hover učinek na vrstici tabele (tr:hover z
+rgb(0 0 0 / 8%) in transition) in ne ustreza vprašanju; verjetno manjka
+poizvedba o hover učinku. Preverite izvirni pogovor.
+
+VNOS C2
+Datum: ______  Model: ______ (ni razvidno)
+POIZVEDBA:
+why dont the brown tr get darker
+(+ priložena koda tabele z tbody tr:hover in tbody tr:nth-child(even))
+ODGOVOR (povzetek):
+Pravili imata enako specifičnost in kasnejše (nth-child(even)) prevlada nad
+hover. Rešitev: nth-child(even) postaviti pred hover pravila in dodati
+tbody tr:nth-child(even):hover z color-mix(in srgb, var(--tertiary), black
+20%), ki potemni rjavo barvo. Opozorilo: --tertiary mora biti definiran v
+:root.
+Uporaba odgovora: ____________________
+Preveril/a: ____________________
+
+=========================================================
+POGOVOR D – lepljiva glava in noga
+Priložene datoteke: index.html, styles.css
+=========================================================
+
+VNOS D1
+Datum: ______  Model: ______ (ni razvidno)
+POIZVEDBA:
+how do i make it so that the hr stays when i scroll, explain thourghlly
+ODGOVOR (povzetek):
+position: sticky velja samo za element, na katerem je nastavljen; <hr> za
+glavo je ločen element in se pomakne stran. Možnosti: (1) priporočeno –
+odstraniti hr in dati glavi border-bottom: 5px solid var(--secondary);
+(2) hr znotraj headerja z flex-wrap: wrap in flex-basis: 100%; (3) ovojni div
+za logo/nav + hr znotraj headerja. Odsvetovano: sticky na samem hr z ročno
+določenim top.
+Uporaba odgovora: ____________________
+Preveril/a: ____________________
+
+VNOS D2
+Datum: ______  Model: ______ (ni razvidno)
+POIZVEDBA:
+why is there white under my footer
+ODGOVOR (povzetek):
+Dva možna vzroka: (1) margin collapsing – margini p in address uidejo iz
+noge; rešitev display: flow-root na footerju, padding ali odstranitev
+margin na footer p/address; (2) kratka stran – body kot flex stolpec z
+min-height: 100vh in footer { margin-top: auto }. Predlagana kombinacija obeh
+in preverjanje v DevTools.
+Uporaba odgovora: ____________________
+Preveril/a: ____________________
+
+=========================================================
+POGOVOR E – logotip in navigacija v glavi
+Priložene datoteke: styles.css, index.html
+=========================================================
+
+VNOS E1
+Datum: ______  Model: ______ (ni razvidno)
+POIZVEDBA:
+how to do this:"Logotip in navigacijo v glavi postavite v isto vrsto: logotip
+levo, navigacija desno." explain everything you change and only change this
+ODGOVOR (povzetek):
+<nav> premakniti znotraj <header> (za povezavo z logotipom) in glavi dodati
+display: flex; justify-content: space-between; align-items: center.
+Razložen vsak ukaz. Ostale vsebine nespremenjene. Opomba: HTML se sklicuje na
+css/styles.css, zato mora datoteka biti v mapi css.
+Uporaba odgovora: ____________________
+Preveril/a: ____________________
+
+VNOS E2
+Datum: ______  Model: ______ (ni razvidno)
+POIZVEDBA:
+how to make it so the nav is always displayed, even when you scroll down
+ODGOVOR (povzetek):
+Glavi dodati position: sticky; top: 0; z-index: 100; background-color
+(npr. white). Sticky mora biti na headerju, ne na nav, ker je nav znotraj
+headerja. Sticky ostane v toku strani (za razliko od fixed).
+Uporaba odgovora: ____________________
+Preveril/a: ____________________
+
+=========================================================
+PREDLOGA ZA NOV VNOS
+=========================================================
+VNOS __
+Datum:
+Model:
+
+POIZVEDBA:
+
+
+ODGOVOR:
+
+
+Uporaba odgovora:
+Preveril/a:
