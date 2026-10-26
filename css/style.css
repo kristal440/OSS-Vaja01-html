@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=REM:wght@100..900&display=swap");
 
+html{
+    scroll-behavior: smooth;
+    scroll-padding-top: 200px;
+}
+
 :root {
     --primary: #166117;
     --secondary: #775e39;
@@ -13,7 +18,6 @@
     --barvaGradient: rgb(0 0 0/.55);
     font-size: 20px;
 }
-
 
 .rem-rem {
     font-family: "REM", sans-serif;
@@ -94,6 +98,11 @@ nav ul li a.aktivno {
     color: var(--bgColor);
     background-color: var(--primary);
 }
+
+#menuButton, #menuToggle {
+    display: none;
+}
+
 footer { /*TODO: zrihti da je spodi ceu cajt*/
     padding: 1rem;
     display: flex;
@@ -124,12 +133,22 @@ main{
     justify-content: center;
     align-items: center;
 }
+
 .uvodTxt{
     text-align: center;
     text-shadow: 1px 1px 15px var(--bgColor);
     color: var(--bgSecondaryColor);
+    position: relative;
+    animation: uvodnaAnimacija 5s ease;
 }
-
+@keyframes uvodnaAnimacija { /*todo to ni vredi ko maš nižji window*/
+    from{
+        top: 215px;
+    }
+    to{
+        top: 0px;
+    }
+}
 .jedi{
     margin-bottom: 1rem;
 }
@@ -148,6 +167,11 @@ main{
     border-radius: 25px;
     margin: 5px;
     box-shadow: 5px 5px 15px var(--headerColor);
+    transition: box-shadow .25s ease, transform  .25s ease;
+}
+.jedi article:hover{
+    box-shadow: 10px 10px 15px var(--headerColor);
+    transform: scale(1.025);
 }
 .jedi article figure{
     position: relative;
@@ -171,7 +195,10 @@ main{
 }
 
 /*jedilnik*/
-
+.drsenje{
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
 .jedilnik{
     width: 100%;
     border-collapse: collapse;
@@ -231,7 +258,7 @@ textarea, select, input:not([type="checkbox"]):not([type="radio"]):not([type="su
     transition: outline-width .25s ease, outline-color .25s ease;
     margin: .2rem;
     background-color: var(--bgColor);
-    width: 70%;
+    width: 100%;
 }
 
 textarea:focus, input:focus:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]), select:focus {
@@ -290,6 +317,11 @@ input[type="reset"]:hover{
     padding: .5rem 1rem;
     margin-bottom: 1rem;
 }
+.recepti img{
+    min-width: 400px;
+    width: 100%;
+    max-width: 100%;
+}
 
 .receptiContainer{
     display: flex;
@@ -344,4 +376,121 @@ iframe{
     width: 100%;
     height: 400px;
     border: 2px solid var(--secondary);
+}
+
+/*telefon*/
+@media screen and (max-width: 600px) {
+    header{ /*todo odstrani to*/
+        border-top: 10px solid green;
+    }
+    #menuButton{
+        position: absolute;
+        top: 50px;
+        right: 20px;
+    }
+    header {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    nav {
+        display: block;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    #menuButton {
+        display: block;
+    }
+
+    nav ul {
+        display: none;
+        padding-right: 0;
+    }
+
+    #menuToggle:checked ~ ul {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav ul li {
+        display: block;
+        padding: 5px 10px;
+    }
+
+    nav ul li a {
+        display: block;
+    }
+
+    /*index*/
+    .jedi .slike{
+        flex-direction: column;
+    }
+
+    /*rezervacija*/
+    .mreza{
+        grid-template-columns: 1fr;
+    }
+    .input{
+        grid-column: 1;
+    }
+    textarea, select, input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]){
+        width: 100%;
+    }
+
+
+        /*jedilnik*/
+    .drsenje{
+        width: 80%;
+        overflow-x: auto;
+    }
+    .jedilnik{
+        width: max-content;
+    }
+
+    /*recepti*/
+    .receptiContainer{
+        flex-direction: column;
+    }
+
+    /*o-nas*/
+    .oNasContainer{
+        flex-direction: column;
+    }
+}
+
+/*tablica*/
+@media screen and (min-width: 600px) and (max-width: 1000px){
+    header{/*todo odstrani to*/
+        border-top: 10px solid yellow;
+    }
+    nav ul{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /*index*/
+    .jedi .slike{
+        flex-wrap: wrap;
+
+    }
+    .jedi article{
+        flex: 0 0 calc(50% - 10px);/* enako kot:
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: calc(50% - 10px);
+        # kar naredi da se karte ne morejo povečati ali pomanjšati in da so široke 50%, un 10px je pa za margin odštet
+        */
+    }
+
+}
+/*računalnik*/
+@media screen and (min-width: 1000px){
+    header{/*todo odstrani to*/
+        border-top: 10px solid red;
+    }
+
+
+    /*index*/
 }

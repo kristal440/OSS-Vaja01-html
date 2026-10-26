@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jedilnik | Gostilna Zeleni Bambus</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <header>
@@ -14,21 +15,23 @@
     </a>
 
     <nav>
+        <input type="checkbox" name="menuToggle" id="menuToggle">
+        <label for="menuToggle" id="menuButton"><a><i class="fa fa-navicon"></i></a></label>
         <ul>
             <li>
-                <a href="index.html">Domov</a>
+                <a href="index.html"><i class="fa fa-home"></i> Domov</a>
             </li>
             <li>
-                <a href="jedilnik.html" class="aktivno">Jedilnik</a>
+                <a href="jedilnik.html"  class="aktivno"><i class="fa fa-cutlery"></i> Jedilnik</a>
             </li>
             <li>
-                <a href="recepti.html">Recepti</a>
+                <a href="recepti.html"><i class="fa fa-list-ol"></i> Recepti</a>
             </li>
             <li>
-                <a href="rezervacija.html">Rezervacija</a>
+                <a href="rezervacija.html"><i class="fa fa-calendar-check-o"></i> Rezervacija</a>
             </li>
             <li>
-                <a href="o-nas.html">O nas</a>
+                <a href="o-nas.html"><i class="fa fa-info-circle"></i> O nas</a>
             </li>
         </ul>
     </nav>
@@ -39,125 +42,131 @@
 
     <section>
         <h2>Predjedi</h2>
-        <table class="jedilnik">
-            <caption>Predjedi</caption>
-            <thead>
-            <tr>
-                <th>Jed</th>
-                <th>Opis</th>
-                <th>Alergeni</th>
-                <th>Cena</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Pomladni zvitki</td>
-                <td>Hrustljavi zvitki z zelenjavo in stekleničnimi rezanci, sladko-čili omaka</td>
-                <td>Gluten, soja</td>
-                <td>5,90 €</td>
-            </tr>
-            <tr>
-                <td>Gyoza</td>
-                <td>Na pari kuhani in popečeni polpeti s svinjino in zeljem</td>
-                <td>Gluten, soja, sezam</td>
-                <td>6,50 €</td>
-            </tr>
-            <tr>
-                <td>Miso juha</td>
-                <td>Juha z mehkim tofujem, morskimi algami in mladim česnom</td>
-                <td>Soja</td>
-                <td>4,50 €</td>
-            </tr>
-            <tr>
-                <td>Edamame</td>
-                <td>Soljeni sojini stročki, kuhani na pari</td>
-                <td>Soja</td>
-                <td>4,00 €</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="drsenje">
+            <table class="jedilnik">
+                <caption>Predjedi</caption>
+                <thead>
+                <tr>
+                    <th>Jed</th>
+                    <th>Opis</th>
+                    <th>Alergeni</th>
+                    <th>Cena</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Pomladni zvitki</td>
+                    <td>Hrustljavi zvitki z zelenjavo in stekleničnimi rezanci, sladko-čili omaka</td>
+                    <td>Gluten, soja</td>
+                    <td>5,90 €</td>
+                </tr>
+                <tr>
+                    <td>Gyoza</td>
+                    <td>Na pari kuhani in popečeni polpeti s svinjino in zeljem</td>
+                    <td>Gluten, soja, sezam</td>
+                    <td>6,50 €</td>
+                </tr>
+                <tr>
+                    <td>Miso juha</td>
+                    <td>Juha z mehkim tofujem, morskimi algami in mladim česnom</td>
+                    <td>Soja</td>
+                    <td>4,50 €</td>
+                </tr>
+                <tr>
+                    <td>Edamame</td>
+                    <td>Soljeni sojini stročki, kuhani na pari</td>
+                    <td>Soja</td>
+                    <td>4,00 €</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
     <section>
         <h2>Glavne jedi</h2>
-        <table class="jedilnik">
-            <caption>Glavne jedi</caption>
-            <thead>
-            <tr>
-                <th>Jed</th>
-                <th>Opis</th>
-                <th>Alergeni</th>
-                <th>Cena</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Chicken teriyaki</td>
-                <td>Piščanec v teriyaki glazuri z dušeno zelenjavo in rižem</td>
-                <td>Gluten, soja</td>
-                <td>12,90 €</td>
-            </tr>
-            <tr>
-                <td>Pho bo</td>
-                <td>Goveja juha z rižnimi rezanci, govedino in svežimi zelišči</td>
-                <td>Ribe, zeler</td>
-                <td>11,50 €</td>
-            </tr>
-            <tr>
-                <td>Pad Thai z zelenjavo</td>
-                <td>Pečeni rižni rezanci s tofujem, jajcem, arašidi in limeto</td>
-                <td>Jajca, arašidi, soja</td>
-                <td>11,90 €</td>
-            </tr>
-            <tr>
-                <td>Zeleni curry s tofujem</td>
-                <td>Kokosovo mleko, bambus, bazilika in jasmin riž</td>
-                <td>Soja</td>
-                <td>10,90 €</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="drsenje">
+            <table class="jedilnik">
+                <caption>Glavne jedi</caption>
+                <thead>
+                <tr>
+                    <th>Jed</th>
+                    <th>Opis</th>
+                    <th>Alergeni</th>
+                    <th>Cena</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Chicken teriyaki</td>
+                    <td>Piščanec v teriyaki glazuri z dušeno zelenjavo in rižem</td>
+                    <td>Gluten, soja</td>
+                    <td>12,90 €</td>
+                </tr>
+                <tr>
+                    <td>Pho bo</td>
+                    <td>Goveja juha z rižnimi rezanci, govedino in svežimi zelišči</td>
+                    <td>Ribe, zeler</td>
+                    <td>11,50 €</td>
+                </tr>
+                <tr>
+                    <td>Pad Thai z zelenjavo</td>
+                    <td>Pečeni rižni rezanci s tofujem, jajcem, arašidi in limeto</td>
+                    <td>Jajca, arašidi, soja</td>
+                    <td>11,90 €</td>
+                </tr>
+                <tr>
+                    <td>Zeleni curry s tofujem</td>
+                    <td>Kokosovo mleko, bambus, bazilika in jasmin riž</td>
+                    <td>Soja</td>
+                    <td>10,90 €</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
     <section>
         <h2>Sladice</h2>
-        <table class="jedilnik">
-            <caption>Sladice</caption>
-            <thead>
-            <tr>
-                <th>Jed</th>
-                <th>Opis</th>
-                <th>Alergeni</th>
-                <th>Cena</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-                <td>Jagodni tiramisu</td>
-                <td>Lahka sladica z mascarponejem, piškoti in svežimi jagodami, brez kave</td>
-                <td>Gluten, jajca, mleko</td>
-                <td>5,50 €</td>
-            </tr>
-            <tr>
-                <td>Mavričen bananin kruh</td>
-                <td>Mehek bananin kruh v barvah mavrice</td>
-                <td>Gluten, jajca, mleko</td>
-                <td>4,50 €</td>
-            </tr>
-            <tr>
-                <td>Mochi s sladoledom</td>
-                <td>Rižni kolački z nadevom iz matcha sladoleda</td>
-                <td>Mleko</td>
-                <td>5,00 €</td>
-            </tr>
-            <tr>
-                <td>Sladki riž z mangom</td>
-                <td>Lepljiv kokosov riž s svežim mangom in praženim sezamom</td>
-                <td>Sezam</td>
-                <td>5,20 €</td>
-            </tr>
-            </tbody>
-        </table>
+        <div class="drsenje">
+            <table class="jedilnik">
+                <caption>Sladice</caption>
+                <thead>
+                <tr>
+                    <th>Jed</th>
+                    <th>Opis</th>
+                    <th>Alergeni</th>
+                    <th>Cena</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Jagodni tiramisu</td>
+                    <td>Lahka sladica z mascarponejem, piškoti in svežimi jagodami, brez kave</td>
+                    <td>Gluten, jajca, mleko</td>
+                    <td>5,50 €</td>
+                </tr>
+                <tr>
+                    <td>Mavričen bananin kruh</td>
+                    <td>Mehek bananin kruh v barvah mavrice</td>
+                    <td>Gluten, jajca, mleko</td>
+                    <td>4,50 €</td>
+                </tr>
+                <tr>
+                    <td>Mochi s sladoledom</td>
+                    <td>Rižni kolački z nadevom iz matcha sladoleda</td>
+                    <td>Mleko</td>
+                    <td>5,00 €</td>
+                </tr>
+                <tr>
+                    <td>Sladki riž z mangom</td>
+                    <td>Lepljiv kokosov riž s svežim mangom in praženim sezamom</td>
+                    <td>Sezam</td>
+                    <td>5,20 €</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </section>
 
     <p>Vse cene vključujejo DDV. Seznam alergenov je pripravljen skladno z Uredbo (EU) št. 1169/2011.</p>
@@ -165,10 +174,10 @@
 </main>
 <footer>
     <address>
-        Gostilna Zeleni Bambus <br>
-        Žibernik 19, 3250 Rogaška Slatina <br>
-        Telefon: <a href="tel:+38631234567">+386 3 123 45 67</a><br>
-        E-pošta: <a href="mailto:info@zelenibambus.si">info@zelenibambus.si</a>
+        <b>Gostilna Zeleni Bambus</b> <br>
+        <i class="fa fa-map-marker"></i> Žibernik 19, 3250 Rogaška Slatina <br>
+        <i class="fa fa-phone"></i> Telefon: <a href="tel:+38631234567">+386 3 123 45 67</a><br>
+        <i class="fa fa-envelope-open"></i> E-pošta: <a href="mailto:info@zelenibambus.si">info@zelenibambus.si</a>
     </address>
     <p>© 2026 Žiga Krašovec</p>
 </footer>
