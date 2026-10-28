@@ -13,10 +13,29 @@ html{
     --footerColor: #89af8b;
     --bgColor: #d9edda;
     --bgSecondaryColor: #e7f6e8;
+    --aHover: #e7f6e8;
     --txtColor: #239908;
     --warning: #ff0000;
     --barvaGradient: rgb(0 0 0/.55);
+    --fontColor: #000000;
     font-size: 20px;
+}
+
+@media (prefers-color-scheme: dark){
+    :root {
+        --primary: #3eb340;
+        --secondary: #977b4f;
+        --tertiary: #534c3f;
+        --headerColor: rgb(53 76 54);
+        --footerColor: #243726;
+        --bgColor: #49574a;
+        --bgSecondaryColor: #373e37;
+        --aHover: #239908;
+        --txtColor: #468836;
+        --warning: #5a0404;
+        --fontColor: #ffffff;
+        --barvaGradient: rgb(0 0 0/.55);
+    }
 }
 
 .rem-rem {
@@ -30,13 +49,23 @@ html{
     box-sizing: border-box;
 }
 
+h1, h2, h3, h4, h5, h6, p, li, ol, ul , figcaption, address, table, caption, tbody, tfoot, thead, tr, th, td, label,
+legend, table, caption, tbody, tfoot, thead, tr, th, td, input[type="reset"], textarea, input, select{
+    color: var(--fontColor);
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
 a{
     text-decoration: none;
     color: var(--txtColor);
     transition: font-weight .25s, color .25s ease, background .25s;
 }
 a:hover {
-    color: var(--bgSecondaryColor);
+    color: var(--aHover);
     font-weight: bold;
 }
 
@@ -94,7 +123,7 @@ nav ul li a:hover{
 
 }
 
-nav ul li a.aktivno {
+nav ul li a.aktivno{
     color: var(--bgColor);
     background-color: var(--primary);
 }
@@ -143,10 +172,12 @@ main{
 }
 @keyframes uvodnaAnimacija { /*todo to ni vredi ko maš nižji window*/
     from{
-        top: 215px;
+        opacity: 0;
+        transform: translateY(80px);
     }
     to{
-        top: 0px;
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 .jedi{
@@ -211,13 +242,13 @@ main{
     transition: background-color .25s ease;
 }
 .jedilnik tbody tr:hover{
-    background-color: color-mix(var(--bgColor), var(--tertiary) 25%);
+    background-color: color-mix(var(--bgSecondaryColor), var(--tertiary) 40%);
 }
 .jedilnik tbody tr:nth-child(even){
     background-color: var(--tertiary);
 }
 .jedilnik tr:nth-child(even):hover{
-    background-color: color-mix(var(--tertiary), var(--bgColor) 25%);
+    background-color: color-mix(var(--tertiary), var(--bgSecondaryColor) 40%);
 }
 .jedilnik td:last-child, .jedilnik th:last-child{
     text-align: right;
@@ -282,7 +313,7 @@ input[type="submit"]{
     color: var(--bgSecondaryColor);
 }
 input[type="submit"]:hover{
-    cursor: -webkit-grab; cursor: grab;
+    cursor: grab;
     background-color: color-mix(var(--primary), var(--bgSecondaryColor) 10%);
 }
 input[type="reset"]{
@@ -290,7 +321,7 @@ input[type="reset"]{
     border: 1px solid var(--secondary);
 }
 input[type="reset"]:hover{
-    cursor: -webkit-grab; cursor: grab;
+    cursor: grab;
     background-color: color-mix(var(--bgSecondaryColor), var(--secondary) 10%);
 
 }
@@ -318,39 +349,56 @@ input[type="reset"]:hover{
     margin-bottom: 1rem;
 }
 .recepti img{
-    min-width: 400px;
+    display: block;
     width: 100%;
     max-width: 100%;
+    height: auto;
 }
 
 .receptiContainer{
     display: flex;
     flex-direction: row;
+    gap: 1rem;
+}
+.receptiContainer figure{
+    flex: 1 1 0;
+    min-width: 0;      /* dovoli figure, da se skrči pod velikost vsebine */
+    margin: 0;
 }
 .sestavine{
     border: 2px solid var(--secondary);
     border-radius: 25px;
     padding: 1rem;
+    flex: 1 1 0;
+    min-width: 0;
 }
 .recepti h3, .recepti h2{
     border-bottom: 3px dotted color-mix(var(--primary), #000 20%);
     color: var(--primary);
-}
-#jagodniTiramisuSlika img{ /*TODO: spremen kulk vkla je slika namest tega*/
-    width: 500px;
 }
 
 /*o nas*/
 
 .oNasContainer{
     display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
 }
 .oNasTxt{
-    min-width: 500px;
+    flex: 1 1 0;
+    min-width: 0;
 }
-.oNasContainer img { /*todo: spremen nared še drugo sliko ko je manjša*/
-    width: 500px;
+.oNasContainer figure{
+    flex: 1 1 0;
+    min-width: 0;
+    margin: 0;
 }
+.oNasContainer img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
 
 .oNasTable{
     background-color: var(--bgSecondaryColor);
@@ -380,9 +428,10 @@ iframe{
 
 /*telefon*/
 @media screen and (max-width: 600px) {
-    header{ /*todo odstrani to*/
+    /* črta da veš kir view je
+    header{
         border-top: 10px solid green;
-    }
+    }*/
     #menuButton{
         position: absolute;
         top: 50px;
@@ -441,7 +490,6 @@ iframe{
 
         /*jedilnik*/
     .drsenje{
-        width: 80%;
         overflow-x: auto;
     }
     .jedilnik{
@@ -461,9 +509,10 @@ iframe{
 
 /*tablica*/
 @media screen and (min-width: 600px) and (max-width: 1000px){
-    header{/*todo odstrani to*/
+    /* črta da veš kir view je
+    header{
         border-top: 10px solid yellow;
-    }
+    }*/
     nav ul{
         display: flex;
         flex-direction: row;
@@ -487,10 +536,26 @@ iframe{
 }
 /*računalnik*/
 @media screen and (min-width: 1000px){
-    header{/*todo odstrani to*/
+    /* črta da veš kir view je
+    header{
         border-top: 10px solid red;
-    }
+    }*/
 
 
     /*index*/
+}
+
+
+
+@media screen and (prefers-reduced-motion: reduce){
+    html{
+        scroll-behavior: auto;
+    }
+    .uvodTxt{
+        animation: none;
+    }
+    .jedi article, .jedi article:hover{
+        transform: none;
+        transition: none;
+    }
 }

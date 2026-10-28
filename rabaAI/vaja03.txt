@@ -1,0 +1,208 @@
+==============================================================
+DOKUMENTACIJA UPORABE UMETNE INTELIGENCE
+==============================================================
+
+Projekt:           Spletna stran "Gostilna Zeleni Bambus"
+                   (index.html, jedilnik.html, recepti.html,
+                   rezervacija.html, o-nas.html, css/style.css)
+Orodje:            Claude (Anthropic), klepetalni vmesnik claude.ai
+Model (trenutni):  Claude Sonnet 5.5
+Datum zapisa:      28. 10. 2026
+Namen uporabe:     Pomoč pri CSS/HTML težavah (odzivna postavitev,
+                   meni, temni način, dostopnost, zmanjšano gibanje)
+
+OPOMBE O MODELU IN ZANESLJIVOSTI
+--------------------------------------------------------------
+- Model je v vmesniku mogoče zamenjati sredi pogovora. Iz samega
+  pogovora ni mogoče zanesljivo potrditi, kateri model je ustvaril
+  posamezen starejši odgovor. Zgoraj naveden model velja za trenutni
+  odgovor (ta dokumentacija). Če je za oddajo potreben natančen model
+  za vsak odgovor, to preverite v zgodovini pogovora v vmesniku.
+- Odgovori v tem dokumentu so POVZETKI (ne dobesedni prepisi).
+  Poizvedbe so prepisane dobesedno.
+- AI predlogov ni zagnal v brskalniku. Avtor strani jih mora sam
+  preizkusiti in prilagoditi svoji kodi.
+- Naložene datoteke (CSS/HTML/slika) so bile priložene poizvedbam;
+  navedene so v oklepaju.
+
+==============================================================
+ZAPISI POIZVEDB IN ODGOVOROV
+==============================================================
+
+--------------------------------------------------------------
+[1] POIZVEDBA  (priloge: style.css, index.html)
+--------------------------------------------------------------
+"how do i make it so that when i check the menuButton the
+flex-direction of the header is switched to column"
+
+ODGOVOR (povzetek):
+Gnezdeno pravilo header{...} znotraj #menuToggle:checked ~ ul a
+se prevede v selektor, ki ne ujame ničesar. Predlagano: uporaba
+header:has(#menuToggle:checked){ flex-direction: column; }
+znotraj medijske poizvedbe za telefon, odstranitev gnezdenega
+bloka, opomba o podpori :has() in JS alternativi za starejše
+brskalnike.
+
+--------------------------------------------------------------
+[2] POIZVEDBA  (priloge: menu_mobile.png, style_1.css)
+--------------------------------------------------------------
+"why doesn't it work now, it should look like it does at the top
+of the picture"
+
+ODGOVOR (povzetek):
+Najden tipkarski spodrsljaj #menutoToggle namesto #menuToggle.
+Pojasnjeno, da stara pravila za "a" niso več smiselna, ker se zdaj
+skriva/prikazuje "ul". Podana popravljena medijska poizvedba
+(header v stolpcu, nav čez celotno širino, ul display:none /
+flex pri :checked, li in a kot block). Opomba o :hover na
+<a> znotraj labele menuButton.
+
+--------------------------------------------------------------
+[3] POIZVEDBA  (priloga: style_e79654.css)
+--------------------------------------------------------------
+"how would i make it so that on the tablet view the izpostavljene
+jedi would be in 2 columns?"
+
+ODGOVOR (povzetek):
+V tablični medijski poizvedbi: .jedi .slike { flex-wrap: wrap; }
+in .jedi article { flex: 0 0 calc(50% - 10px); }. Možnosti za
+zadnjo kartico (centriranje ali čez celotno širino). Opozorilo na
+prekrivanje pri točno 600 px (priporočeno min-width: 601px).
+
+--------------------------------------------------------------
+[4] POIZVEDBA  (priloga: excerpt_from_previous_claude_message.txt)
+--------------------------------------------------------------
+"explain how this works'"
+
+ODGOVOR (povzetek):
+Razlaga kratice flex: 0 0 calc(50% - 10px): flex-grow 0,
+flex-shrink 0, flex-basis. Razlaga, zakaj se odšteje 10 px
+(margin 5 px na vsaki strani) in kako flex-wrap premakne tretjo
+kartico v novo vrstico.
+
+--------------------------------------------------------------
+[5] POIZVEDBA  (priloga: jedilnik.html)
+--------------------------------------------------------------
+"kako naj naredim to - Tabele jedilnika naj se na ozkih zaslonih
+ne raztegnejo čez rob strani. Zavijte jih v element div, ki
+omogoča vodoravno drsenje."
+
+ODGOVOR (povzetek):
+Vsako tabelo zaviti v <div> z razredom (npr. tabelaDrsenje) z
+overflow-x: auto; width: 100%. Predlagan min-width na tabeli, da
+se pojavi drsenje namesto stiskanja besedila.
+
+--------------------------------------------------------------
+[6] POIZVEDBA  (priloge: jedilnik_1.html, style_cafe6b.css)
+--------------------------------------------------------------
+"ne deluje, nič se ni spremenilo"
+
+ODGOVOR (povzetek):
+Tabeli manjka min-width, zato se samo stisne in drsenje se ne
+sproži. Dodan min-width na .jedilnik. Seznam preverjanj (predpomnilnik,
+širina zaslona pod 600 px, pravilna CSS datoteka). Priporočena
+zamenjava overflow-x: scroll z auto.
+
+--------------------------------------------------------------
+[7] POIZVEDBA  (priloge: style_cdf99d.css, rezervacija.html)
+--------------------------------------------------------------
+"why don't the input fields strech across the whole width of the
+fieldset"
+
+ODGOVOR (povzetek):
+Namizje: širina 70 % je relativna na stolpec mreže (20% 70%), ne
+na fieldset. Predlagano grid-template-columns: 20% 1fr in
+width: calc(100% - .4rem). Telefon: mreža naj ima en stolpec
+(1fr). Dodane opombe o napakah v HTML (podvojena oznaka, name na
+napačnem elementu).
+
+--------------------------------------------------------------
+[8] POIZVEDBA  (priloga: recepti.html)
+--------------------------------------------------------------
+"kako naj naredim da ko pritisnem na gumb, ki me prestavi na jed,
+da glava ne prekrije naslova jedi ko se prestavi"
+
+ODGOVOR (povzetek):
+Uporaba scroll-margin-top na naslovih ali scroll-padding-top na
+html, z različnimi vrednostmi za telefon in namizje. Dodatno
+scroll-behavior: smooth.
+
+--------------------------------------------------------------
+[9] POIZVEDBA  (priloga: style_e7c7fa.css)
+--------------------------------------------------------------
+"how do i setup the dark mode colors"
+
+ODGOVOR (povzetek):
+Sintaksa ":root @media ..." je neveljavna; pravilno je
+@media (prefers-color-scheme: dark){ :root { ... } }. Opozorila o
+barvi besedila, kontrastu povezav, vrstnem redu ozadij in o
+manjkajočem "in srgb" pri color-mix(). Navodila za testiranje v
+Chrome DevTools.
+
+--------------------------------------------------------------
+[10] POIZVEDBA  (priloga: style_2b9fc7.css)
+--------------------------------------------------------------
+"kako naredim da je i od fa pravilne barve v nav, tako kot a,
+zdaj ni prav"
+
+ODGOVOR (povzetek):
+Vzrok: pravilo * { color: var(--fontColor); } preglasi dedovanje
+barve na <i>. Rešitev: barvo nastaviti na body, popraviti napačno
+gnezdena pravila v nav, dodati color na polja obrazca.
+
+--------------------------------------------------------------
+[11] POIZVEDBA  (priloga: style_89d169.css)
+--------------------------------------------------------------
+"kako naj pravilno nastavim reduced motion"
+
+ODGOVOR (povzetek):
+Pogoj je bil obrnjen: uporabiti prefers-reduced-motion: reduce
+(ne no-preference). Podane variante: splošen izklop animacij in
+prehodov, ciljan izklop gibanja ter pristop "gibanje kot
+izboljšava" z no-preference.
+
+--------------------------------------------------------------
+[12] POIZVEDBA  (priloge: recepti_1.html, style_315b16.css)
+--------------------------------------------------------------
+"- Nobena slika ne sme biti širša od svojega vsebnika
+(max-width: 100%). Na nobeni velikosti zaslona se ne sme pojaviti
+vodoravni drsni trak celotne strani.
+
+na strani recepti se pri bananinem kruhu pri zelo ozkem tabličnem
+pogledu div sestavine gre preko desne strani strani in se pokaže
+horizontal scroll bar, kako naj to popravim?"
+
+ODGOVOR (povzetek):
+Vzrok: min-width: 400px na slikah in flex otroci brez
+min-width: 0. Rešitev: odstraniti min-width na sliki, figure in
+.sestavine dati flex: 1 1 0 in min-width: 0, tiramisu sliki
+nastaviti width: 100 %, po potrebi preklop na stolpec pri 800 px,
+splošno pravilo img { max-width: 100%; height: auto; } in JS
+izsek za iskanje elementov, ki segajo čez rob.
+
+--------------------------------------------------------------
+[13] POIZVEDBA  (priloga: o-nas.html)
+--------------------------------------------------------------
+"sedaj je slika pri o nas zelo majhna"
+
+ODGOVOR (povzetek):
+Pravili min-width: 500px (besedilo) in width: 500px (slika) se
+skupaj z max-width: 100% ne razumeta. Predlagana nova flex
+postavitev: besedilo in figure flex: 1 1 0 z min-width: 0, slika
+width: 100 %, na telefonu stolpec z flex: none.
+
+--------------------------------------------------------------
+[14] POIZVEDBA
+--------------------------------------------------------------
+"ustvari dokumentacijo za trenuten pogovor
+Uporabo umetne inteligence ustrezno dokumentirajte. V datoteki
+txt beležite poizvedbo, odgovor in uporabljen model."
+
+ODGOVOR (povzetek):
+Ustvarjena ta datoteka (dokumentacija_uporabe_ai.txt) z zapisi
+poizvedb, povzetki odgovorov in navedbo modela.
+Model: Claude Sonnet 5.5
+
+==============================================================
+KONEC DOKUMENTACIJE
+==============================================================
