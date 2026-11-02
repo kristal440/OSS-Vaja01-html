@@ -6,6 +6,7 @@
     <title>Rezervacija | Gostilna Zeleni Bambus</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/rezervacija.js"></script>
 </head>
 <body>
 <header>
@@ -42,7 +43,7 @@
         <p>Mizo lahko rezervirate od ponedeljka do sobote med 11.00 in 21.00. Ob ponedeljkih je gostilna zaprta. Za skupine, večje od 12 oseb, nas prosim pokličite</p>
     </div>
 
-    <form action="rezervacija.html" method="get">
+    <form action="rezervacija.html" method="get" novalidate>
         <fieldset>
             <legend>Kontaktni podatki</legend>
 
@@ -51,19 +52,22 @@
                     <label for="name" >Ime in priimek </label>
                 </div>
                 <div class="input">
-                    <input type="text" id="name" name="name" placeholder="Janez Novak" required> <br>
+                    <input type="text" id="name" name="name" placeholder="Janez Novak" required>
+                    <span class="napaka" id="name-napaka"></span>
                 </div>
                 <div class="label">
                     <label for="email">Elektronska pošta </label>
                 </div>
                 <div class="input">
-                    <input type="email" id="email" name="email" placeholder="janez.novak@primer.si" required> <br>
+                    <input type="email" id="email" name="email" placeholder="janez.novak@primer.si" required>
+                    <span class="napaka" id="email-napaka"></span>
                 </div>
                 <div class="label">
                     <label for="telNumber">Telefon </label>
                 </div>
                 <div class="input">
                     <input type="tel" id="telNumber" name="telNumber" placeholder="040 123 456" required>
+                    <span class="napaka" id="telNumber-napaka"></span>
                 </div>
             </div>
         </fieldset>
@@ -76,19 +80,22 @@
                     <label for="date">Datum </label>
                 </div>
                 <div class="input">
-                    <input type="date" id="date" name="date" required> <br>
+                    <input type="date" id="date" name="date" required>
+                    <span class="napaka" id="date-napaka"></span>
                 </div>
                 <div class="label">
                     <label for="time">Ura </label>
                 </div>
                 <div class="input">
-                    <input type="time" id="time" name="time" min="11:00" max="21:00" required> <br>
+                    <input type="time" id="time" name="time" min="11:00" max="21:00" required>
+                    <span class="napaka" id="time-napaka"></span>
                 </div>
                 <div class="label">
                     <label for="numOfPeople">Število oseb</label>
                 </div>
                 <div class="input">
-                    <input type="number" min="1" max="12" id="numOfPeople" name="numOfPeople" required> <br>
+                    <input type="number" min="1" max="12" id="numOfPeople" name="numOfPeople" required>
+                    <span class="napaka" id="numOfPeople-napaka"></span>
                 </div>
                 <div class="label">
                     <label for="prostor">Prostor</label>
@@ -99,10 +106,11 @@
                         <option value="notranjost">Notranjost</option>
                         <option value="terasa">Terasa</option>
                         <option value="zasebnaSoba">Zasebna soba</option>
-                    </select> <br>
+                    </select>
+
                 </div>
                 <div class="label">
-                    <label>Priložnost</label> <br>
+                    <label>Priložnost</label>
 
                 </div>
                 <div class="input">
@@ -122,7 +130,7 @@
             <legend>Dodatne želje</legend>
             <div class="mreza">
                 <div class="label">
-                    <label>Prehranske omejitve</label> <br>
+                    <label>Prehranske omejitve</label>
 
                 </div>
                 <div class="input">
@@ -133,7 +141,7 @@
                     <input type="checkbox" id="brezGlutena" name="prehranskeOmejitve" value="Brez glutena">
                     <label for="brezGlutena">Brez glutena</label>
                     <input type="checkbox" id="brezLaktoze" name="prehranskeOmejitve" value="Brez laktoze">
-                    <label for="brezLaktoze">Brez laktoze</label> <br>
+                    <label for="brezLaktoze">Brez laktoze</label>
 
                 </div>
                 <div class="label">
@@ -142,18 +150,18 @@
                 </div>
                 <div class="input">
                     <textarea name="opombe" id="opombe" cols="50" rows="5" placeholder="Npr. potrebujemo otroški stolček."></textarea>
-                    <br>
+
                 </div>
                 <div class="input">
-                    <input type="checkbox" id="strinjanje" value="true" required>
+                    <input name="strinjanje" type="checkbox" id="strinjanje" value="true" required>
                     <label for="strinjanje">Strinjam se z obdelavo osebnih podatkov</label>
-                    <label for="strinjanje">Strinjam se z obdelavo osebnih podatkov</label>
+                    <span class="napaka" id="strinjanje-napaka"></span>
                 </div>
 
             </div>
         </fieldset>
         <div class="buttons">
-            <input name="strinjanje" type="submit" value="Pošlji rezervacijo">
+            <input name="pošlji" type="submit" value="Pošlji rezervacijo">
             <input type="reset" value="Ponastavi">
         </div>
 

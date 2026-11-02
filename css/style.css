@@ -16,6 +16,7 @@ html{
     --aHover: #e7f6e8;
     --txtColor: #239908;
     --warning: #ff0000;
+    --warningSecondary: #ff0000;
     --barvaGradient: rgb(0 0 0/.55);
     --fontColor: #000000;
     font-size: 20px;
@@ -33,6 +34,7 @@ html{
         --aHover: #239908;
         --txtColor: #468836;
         --warning: #5a0404;
+        --warningSecondary: #8c1a1a;
         --fontColor: #ffffff;
         --barvaGradient: rgb(0 0 0/.55);
     }
@@ -324,6 +326,11 @@ input[type="reset"]:hover{
     cursor: grab;
     background-color: color-mix(var(--bgSecondaryColor), var(--secondary) 10%);
 
+}
+
+.napaka{ /* todo: napiši tu*/
+    display: block;
+    color: var(--warningSecondary);
 }
 
 /*recepti*/
