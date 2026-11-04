@@ -284,7 +284,7 @@ legend{
 .uvod2{
     margin: 1rem;
 }
-textarea, select, input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]){
+textarea, select, input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([class="steviloPorcij"]){
     outline: 1px solid var(--secondary);
     border: 1px solid var(--secondary);
     border-radius: 5px;
@@ -294,7 +294,7 @@ textarea, select, input:not([type="checkbox"]):not([type="radio"]):not([type="su
     width: 100%;
 }
 
-textarea:focus, input:focus:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]), select:focus {
+textarea:focus, input:focus:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([class="steviloPorcij"]), select:focus {
     outline: 4px solid var(--primary);
 }
 
@@ -328,9 +328,13 @@ input[type="reset"]:hover{
 
 }
 
-.napaka{ /* todo: napiši tu*/
+.napaka{
     display: block;
     color: var(--warningSecondary);
+}
+input.neveljavno, select.neveljavno, textarea.neveljavno {
+    border-color: var(--warningSecondary) !important;
+    outline-color: var(--warningSecondary) !important;
 }
 
 /*recepti*/
@@ -382,6 +386,12 @@ input[type="reset"]:hover{
 .recepti h3, .recepti h2{
     border-bottom: 3px dotted color-mix(var(--primary), #000 20%);
     color: var(--primary);
+}
+.porcijeContainer > *{
+    display: inline;
+}
+.steviloPorcij{
+    background-color: var(--bgSecondaryColor);
 }
 
 /*o nas*/

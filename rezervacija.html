@@ -6,7 +6,7 @@
     <title>Rezervacija | Gostilna Zeleni Bambus</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="js/rezervacija.js"></script>
+    <script src="js/rezervacija.js" defer></script>
 </head>
 <body>
 <header>
@@ -40,10 +40,10 @@
 <main>
     <div class="uvod2">
         <h1>Rezervacija mize</h1>
-        <p>Mizo lahko rezervirate od ponedeljka do sobote med 11.00 in 21.00. Ob ponedeljkih je gostilna zaprta. Za skupine, večje od 12 oseb, nas prosim pokličite</p>
+        <p>Mizo lahko rezervirate od ponedeljka do sobote med 11.00 in 21.00. Ob nedeljah je gostilna zaprta. Za skupine, večje od 12 oseb, nas prosim pokličite</p>
     </div>
 
-    <form action="rezervacija.html" method="get" novalidate>
+    <form id="obrazec" action="rezervacija.html" method="get" novalidate>
         <fieldset>
             <legend>Kontaktni podatki</legend>
 
@@ -161,11 +161,12 @@
             </div>
         </fieldset>
         <div class="buttons">
-            <input name="pošlji" type="submit" value="Pošlji rezervacijo">
+            <input name="poslji" type="submit" value="Pošlji rezervacijo">
             <input type="reset" value="Ponastavi">
         </div>
 
     </form>
+    <div id="povzetek"></div>
 </main>
 <footer>
     <address>

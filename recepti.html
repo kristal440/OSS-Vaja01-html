@@ -6,6 +6,7 @@
     <title>Recepti | Gostilna Zeleni Bambus</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/recepti.js" defer></script>
 </head>
 <body>
 <header>
@@ -60,18 +61,20 @@
                 <figcaption>Bananin kruh pobarvan v barve mavrice.</figcaption>
             </figure>
             <div class="sestavine">
-                <p>Čas priprave: 15 min priprave + 45–50 min peke - Število porcij: 8 kosov</p>
-
+                <div class="porcijeContainer">
+                    <p>Čas priprave: 15 min priprave + 45–50 min peke - Število porcij: </p> <input type="number" class="steviloPorcij" 
+                                                                                                    min="1" max="12" value ="8" step="1" id="stBanana">
+                </div>
                 <h3>Sestavine</h3>
                 <ul>
-                    <li>3 banane</li>
-                    <li>2 jajci</li>
-                    <li>125 g masla</li>
-                    <li>125 g sladkorja</li>
-                    <li>1 vanilijev sladkor</li>
-                    <li>170 g moke</li>
-                    <li>1 pecilni prašek</li>
-                    <li>ščepec cimeta</li>
+                    <li><span class="sestavineBanana" data-kolicina="3">3</span> banane</li>
+                    <li><span class="sestavineBanana" data-kolicina="2">2</span> jajci</li>
+                    <li><span class="sestavineBanana" data-kolicina="125">125</span> g masla</li>
+                    <li><span class="sestavineBanana" data-kolicina="125">125</span> g sladkorja</li>
+                    <li><span class="sestavineBanana" data-kolicina="1">1</span> vanilijev sladkor</li>
+                    <li><span class="sestavineBanana" data-kolicina="170">170</span> g moke</li>
+                    <li><span class="sestavineBanana" data-kolicina="1">1</span> pecilni prašek</li>
+                    <li><span class="sestavineBanana" data-kolicina="1">1</span> ščepec cimeta</li>
                     <li>živilske barve (po želji, za mavrični učinek)</li>
                 </ul>
             </div>
@@ -101,19 +104,21 @@
             </figure>
 
             <div class="sestavine">
-                <p>Čas priprave: 30 min priprave + vsaj 4 ure hlajenja - Število porcij: 8–10 porcij</p>
-
+                <div class="porcijeContainer">
+                    <p>Čas priprave: 30 min priprave + vsaj 4 ure hlajenja - Število porcij: </p> <input type="number" class="steviloPorcij" 
+                                                                                                         min="1" max="12" value="8" step="1" id="stJagoda">
+                </div>
                 <h3>Sestavine</h3>
                 <ul>
-                    <li>600 g jagod</li>
-                    <li>4 jajca</li>
-                    <li>90 g sladkorja</li>
-                    <li>1 vanilijev sladkor</li>
-                    <li>500 g mascarponeja</li>
-                    <li>300 ml mleka</li>
-                    <li>100 ml jagodnega soka</li>
-                    <li>400 g piškotov savoiardi</li>
-                    <li>2 žlici sladkorja (za jagodni pire)</li>
+                    <li><span class="sestavineJagoda" data-kolicina="600">600</span> g jagod</li>
+                    <li><span class="sestavineJagoda" data-kolicina="4">4</span> jajca</li>
+                    <li><span class="sestavineJagoda" data-kolicina="90">90</span> g sladkorja</li>
+                    <li><span class="sestavineJagoda" data-kolicina="1">1</span> vanilijev sladkor</li>
+                    <li><span class="sestavineJagoda" data-kolicina="500">500</span> g mascarponeja</li>
+                    <li><span class="sestavineJagoda" data-kolicina="300">300</span> ml mleka</li>
+                    <li><span class="sestavineJagoda" data-kolicina="100">100</span> ml jagodnega soka</li>
+                    <li><span class="sestavineJagoda" data-kolicina="400">400</span> g piškotov savoiardi</li>
+                    <li><span class="sestavineJagoda" data-kolicina="2">2</span> žlici sladkorja (za jagodni pire)</li>
                 </ul>
             </div>
 
@@ -142,20 +147,24 @@
             </figure>
 
             <div class="sestavine">
-                <p>Čas priprave: 30 minut - Število porcij: 2 porciji</p>
+                <div class="porcijeContainer">
+                    <p>Čas priprave: 30 minut - Število porcij: </p> <input type="number" class="steviloPorcij" 
+                                                                            min="1" max="12" value="2" step="1" id="stChicken">
+                </div>
 
                 <h3>Sestavine</h3>
                 <ul>
-                    <li>Čebula</li>
-                    <li>1 kocka goveje juhe</li>
-                    <li>Riž in voda v razmerju 1 : 2 (npr. 2 kozarca riža : 4 kozarci vode)</li>
-                    <li>36 g rjavega sladkorja</li>
-                    <li>45 ml sojine omake</li>
-                    <li>15 ml olja</li>
-                    <li>5 ml jabolčnega kisa</li>
-                    <li>5 g ingverja</li>
-                    <li>5 g česna</li>
-                    <li>250 g piščančjega mesa</li>
+                    <li><span class="sestavineChicken" data-kolicina="1">1</span> čebula</li>
+                    <li><span class="sestavineChicken" data-kolicina="1">1</span> kocka goveje juhe</li>
+                    <li><span class="sestavineChicken" data-kolicina="1">1</span> kozarec riža</li>
+                    <li><span class="sestavineChicken" data-kolicina="2">2</span> kozarca vode </li>
+                    <li><span class="sestavineChicken" data-kolicina="26">36</span> g rjavega sladkorja</li>
+                    <li><span class="sestavineChicken" data-kolicina="45">45</span> ml sojine omake</li>
+                    <li><span class="sestavineChicken" data-kolicina="15">15</span> ml olja</li>
+                    <li><span class="sestavineChicken" data-kolicina="5">5</span> ml jabolčnega kisa</li>
+                    <li><span class="sestavineChicken" data-kolicina="5">5</span> g ingverja</li>
+                    <li><span class="sestavineChicken" data-kolicina="5">5</span> g česna</li>
+                    <li><span class="sestavineChicken" data-kolicina="250">250</span> g piščančjega mesa</li>
                     <li>Zelenjava (po izbiri)</li>
                     <li>Sol in poper</li>
                 </ul>
