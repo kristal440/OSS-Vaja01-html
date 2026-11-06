@@ -255,6 +255,21 @@ main{
 .jedilnik td:last-child, .jedilnik th:last-child{
     text-align: right;
 }
+.jedilnikGumbi{
+    display: flex;
+    justify-content: center;
+}
+.jedilnikGumbi input{
+    margin: 5px;
+    background-color: var(--headerColor);
+    color: var(--fontColor);
+    border: none;
+    outline: none;
+    padding: 0.25rem 0.5rem;
+    font-size: 1.25rem;
+    border-radius: .5rem;
+    font-weight: bold;
+}
 /*rezervacija*/
 fieldset{
     border: 5px dotted var(--secondary);
@@ -284,7 +299,7 @@ legend{
 .uvod2{
     margin: 1rem;
 }
-textarea, select, input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="reset"]):not([class="steviloPorcij"]){
+textarea, select, input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="reset"]):not([class="steviloPorcij"]){
     outline: 1px solid var(--secondary);
     border: 1px solid var(--secondary);
     border-radius: 5px;
