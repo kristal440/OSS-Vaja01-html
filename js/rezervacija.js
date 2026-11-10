@@ -134,8 +134,8 @@ for (const polje of polja) {
     polje.addEventListener("input", () => validirajPolje(polje));
 }
 
-obrazec.addEventListener("submit", (e) => {
-    e.preventDefault();
+obrazec.addEventListener("submit", (oddaja) => {
+    oddaja.preventDefault();
 
     let vseVeljavno = true;
     for (const polje of polja) {

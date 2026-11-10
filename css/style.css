@@ -275,7 +275,7 @@ fieldset{
     border: 5px dotted var(--secondary);
     border-top: 7px solid var(--primary);
     border-radius: 15px;
-    margin: 1rem;
+    margin: 3rem 1rem;
     background-color: var(--bgSecondaryColor);
 }
 .mreza{
@@ -298,6 +298,7 @@ legend{
 }
 .uvod2{
     margin: 1rem;
+    margin-bottom: 4rem;
 }
 textarea, select, input:not([type="checkbox"]):not([type="radio"]):not([type="button"]):not([type="submit"]):not([type="reset"]):not([class="steviloPorcij"]){
     outline: 1px solid var(--secondary);

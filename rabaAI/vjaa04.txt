@@ -1,0 +1,130 @@
+DOKUMENTACIJA UPORABE UMETNE INTELIGENCE
+Projekt: Gostilna Zeleni Bambus (vaja 4, JavaScript)
+Datum pogovora: 10. 11. 2026
+Avtor: Žiga Krašovec
+
+============================================================
+1. UPORABLJEN MODEL IN ORODJE
+============================================================
+Orodje: Claude (Anthropic), spletni klepetalnik claude.ai
+Model: Claude Sonnet 5.5
+Opomba: v klepetalniku je mogoče model med pogovorom zamenjati, zato je
+treba pred oddajo preveriti, da so bili vsi odgovori res generirani s tem
+modelom, in po potrebi dopisati drug model.
+
+Vrsta generiranih vsebin: samo besedilo in programska koda (JavaScript,
+HTML, CSS) ter razlage. Slike NISO bile generirane, zato pomanjševanje in
+stiskanje slik (največ 500 KB) za ta pogovor ni bilo potrebno.
+
+============================================================
+2. POIZVEDBE (v vrstnem redu; povzeto, razen kjer je navedeno drugače)
+============================================================
+
+--- A) Validacija obrazca za rezervacijo (js/rezervacija.js) ---
+
+1. Prva poizvedba: priložene datoteke rezervacija.html, rezervacija.js,
+   style.css in besedilo navodil vaje. Prošnja: "prvo stvar ki jo želim
+   narediti je validacija rezervacije, napiši splošne primere iz katerih
+   bom lahko razvidel kako naj to pri svoji spletni strani implementiram".
+
+2. "razloži mi te znake in kaj vsak tak znak pri primerjanju pomeni še pri
+   drugih primerih: /^\p{L}{2,}(\s+\p{L}{2,})+$/u"
+
+3. "razloži kaj ta cela funkcija naredi in točno kaj naredi vsaka vrsta v
+   njej" (funkcija preveriIme).
+
+4. "kaj je razlika med tem vzorcem in tvojim v funkcionalnosti"
+   (vzorec brez ^ in $ ter brez skupine).
+
+5. "kaj pa če želim samo dve besedi, je to prav"
+   (/^\p{L}{2,}\s+\p{L}{2,}$/u).
+
+6. Preverjanje razumevanja: da vzorec.test(vrednost.trim()) vrne bool in
+   se izvede veja if ali else.
+
+7. "kaj naredi .map(Number)"
+
+8. "razloži celo funkcijo, zakaj me pri izbran mesec -1" (preveriDatum).
+
+9. "kaj to naredi: const n = Number(vrednost);"
+
+10. "zakaj je tu polje in ne vrednost" (preveriSoglasje).
+
+11. Priložene dopolnjene datoteke rezervacija_1.js/.html/style_1.css.
+    Prošnja: "to sem do sedaj naredil, kako naj nadaljujem in ali je lahko
+    malo poenostavljena koda in da zadošča vsemu kar rabi naloga".
+
+12. Sporočilo o napaki v konzoli: "Uncaught TypeError: can't access
+    property addEventListener, polje is null" (rezervacija.js, vrstica 136).
+
+--- B) Kalkulator porcij (js/recepti.js) ---
+
+13. Priložena recepti.js in rezervacija_2afc64.html. Vprašanje: "kako lahko
+    naredim za recepte" (kalkulator porcij z atributom data-kolicina).
+
+--- C) Dinamični jedilnik (js/jedilnik.js) ---
+
+14. "kako lahko naredim polje v katerem bodo jedi ki bodo imele ime, opis,
+    cena, alergeni"
+
+15. "dopolni to tabelo za vse jedi v html dokumentu" (priložen jedilnik.html
+    in začetek polja jedi).
+
+16. "why doesn't this create a h2 that says Predjedi and shows it on the
+    site?" (funkcija naloziTabelo z document.appendChild).
+
+17. "why is it still not working" (priloženi jedilnik_1.html in jedilnik.js;
+    napaka pri klicu naloziTabelo()).
+
+18. "can i do this in this ..." (ali lahko tr pripnem v thead pred zanko for).
+
+19. "so if i use the parenthesis does that mean that if i give it an
+    attribute it will start imedeatly before all the html loads?"
+
+20. "kako pa lahko kličem podatke iz jedi ko imam jedi v funkciji
+    naloziTabelo"
+
+21. "daj mi hint zakaj se nič ne pokaže" (priložen jedilnik_1.js; zahteval
+    sem samo namig, ne rešitve).
+
+22. "povej mi samo kako dam pri tem document.addEventListener(
+    "DOMContentLoaded", () => naloziTabele(jedi, izbira)); da se zgodi ko
+    pritisnem na katerega od gumbov v div-u .jedilnikGumbi"
+
+--- D) Dokumentacija ---
+
+23. "ustvari dokumentacijo za ta pogovor" (ta datoteka).
+
+============================================================
+3. KAJ JE UMETNA INTELIGENCA PRISPEVALA IN KAJ JE NAREDIL AVTOR
+============================================================
+Prispevek AI:
+- splošni vzorec validacije (funkcije za prikaz/odstranitev napake,
+  validatorji, povezava polj, povzetek rezervacije),
+- razlage regularnih izrazov, metod .map, Number, getDay ipd.,
+- odkrivanje napak v moji kodi: GetDay namesto getDay, napačen pogoj v
+  preveriUro, prioriteta operatorja | v regularnem izrazu za telefon,
+  specifičnost CSS za razred neveljavno, manjkajoč defer,
+- vzorec za kalkulator porcij (data-kolicina, closest, Math.round),
+- prepis 12 jedi iz HTML v polje objektov,
+- razlaga, zakaj se elementi ne prikažejo (appendChild, klic funkcije z
+  oklepaji pri addEventListener),
+- vzorec za gumbe za filtriranje.
+
+Prispevek avtorja:
+- zasnova in oblikovanje strani (HTML, CSS iz prejšnjih vaj),
+- lastna prilagoditev in sestavljanje kode (npr. funkciji naloziTabele in
+  naloziTabelo, izbira dneva zaprtja, sporočila napak, struktura jedilnika),
+- testiranje v brskalniku, odpravljanje napak in končna odločitev o rešitvah.
+
+Vir regularnega izraza za e-pošto (naveden v komentarju v kodi):
+https://medium.com/@sketch.paintings/email-validation-with-javascript-regex-e1b40863ed23
+
+============================================================
+4. OPOMBE ZA PREVERBO PRED ODDAJO
+============================================================
+- Vso kodo, ki jo je predlagal AI, sem pregledal in preizkusil.
+- Natančno besedilo poizvedb lahko dopolnim iz zgodovine pogovora, če to
+  zahteva ocenjevalec (zgoraj so poizvedbe povzete).
+- Pred oddajo še preveriti: konzola brez napak, komentar pri vsaki funkciji,
+  uporaba samo const/let, dogodki samo z addEventListener.
